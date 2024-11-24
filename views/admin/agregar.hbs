@@ -1,0 +1,25 @@
+<h1>Agregar novedad</h1>
+<div>
+  <form enctype="multipart/form-data" action="/admin/novedades/agregar" method="post">
+    <div class="mb-3">
+      <label class="form-label">Titulo</label>
+      <input name="titulo" class="form-control"
+        aria-describedby="emailHelp">
+  </div>
+    <div class="mb-3">
+      <label class="form-label">Subtitulo</label>
+      <input name="subtitulo" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Cuerpo</label>
+      <input name="cuerpo" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label>Imagen: <input class="form-control" type="file" name="imagen" id="imagen"></label>
+    </div>
+    <button type="submit" class="btn btn-primary">Confirmar</button>
+  </form>
+  {{#if error}}
+  {{message}}
+  {{/if}}
+</div>

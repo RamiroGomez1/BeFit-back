@@ -1,0 +1,42 @@
+<h1>Editar novedad</h1>
+<div>
+  <form enctype="multipart/form-data" action="/admin/novedades/editar"
+    method="post">
+    <input name="id" type="hidden" value="{{novedad.id}}">
+    <div class="mb-3">
+      <label class="form-label">Titulo</label>
+      <input name="titulo" class="form-control" value={{novedad.titulo}}>
+    </div>
+
+
+    <div>
+      <p>
+        <label>
+          Imagen: <input type="file" name="imagen" id="imagen">
+        </label>
+      </p>
+
+      <p>
+        <label><input type="checkbox" name="img_delete" id="img_delete"
+            value="1">
+          Eliminar imagen actual?</label>
+        <input type="hidden" name="img_original" value="{{novedad.img_id}}">
+      </p>
+    </div>
+
+
+    <div class="mb-3">
+      <label class="form-label">Subtitulo</label>
+      <input name="subtitulo" class="form-control" value={{novedad.subtitulo}}>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Cuerpo</label>
+      <textarea name="cuerpo" class="form-control">{{novedad.cuerpo}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Confirmar
+      Modificacion</button>
+  </form>
+  {{#if error}}
+  {{message}}
+  {{/if}}
+</div>
